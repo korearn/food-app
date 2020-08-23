@@ -15,8 +15,7 @@ class HomeTopInfo extends StatelessWidget{
             Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("What do you", style: textStyle),
-                  Text("want to eat?", style: textStyle),
+                  Text("¿Qué quieres comer?", style: textStyle),
                   //Text("Si", style: textStyle)
                 ]
             ),
