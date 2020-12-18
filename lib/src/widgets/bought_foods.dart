@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 
 class BoughtFoods extends StatefulWidget{
+  final String id;
+  final String name;
+  final String imagePath;
+  final String category;
+  final double price;
+  final double discount;
+  final double ratings;
+
+  BoughtFoods({this.id, this.name, this.imagePath, this.category, this.price, this.discount, this.ratings});
+
   @override
   _BoughtFoodsState createState() => _BoughtFoodsState();
-
 }
 
 class _BoughtFoodsState extends State<BoughtFoods>{
@@ -16,7 +25,7 @@ class _BoughtFoodsState extends State<BoughtFoods>{
           Container(
             height: 200.0,
             width: 370.0,
-            child: Image.asset("assets/images/coffee.jpg", fit: BoxFit.cover,),
+            child: Image.asset(widget.imagePath, fit: BoxFit.cover,),
           ),
           Positioned(
             left: 0.0,
@@ -46,7 +55,7 @@ class _BoughtFoodsState extends State<BoughtFoods>{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      "Coffee",
+                      widget.name,
                       style: TextStyle(
                           color: Color.fromRGBO(255, 249, 196, 1.0),
                         fontSize: 18.0,
@@ -62,7 +71,7 @@ class _BoughtFoodsState extends State<BoughtFoods>{
                         Icon(Icons.star, color: Theme.of(context).primaryColor, size: 16.0,),
                         SizedBox(width: 20.0,),
                         Text(
-                          "(22.0 Reviews)",
+                          "(" + widget.ratings.toString()+ "Reviews)",
                           style: TextStyle(
                             color: Colors.grey,
 
@@ -75,7 +84,7 @@ class _BoughtFoodsState extends State<BoughtFoods>{
                 Column(
                   children: <Widget>[
                     Text(
-                      "22.0",
+                      widget.price.toString(),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.orangeAccent,
